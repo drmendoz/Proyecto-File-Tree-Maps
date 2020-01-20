@@ -6,8 +6,10 @@
 package GUI;
 
 import TreeMap.FileTreeMap;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
@@ -67,7 +69,12 @@ public class TreeMapRectangle {
                     r.setHeight(containerHeigth*tamTmp/tamMap);
                     r.setWidth(containerWidth);
                 }
-                container.getChildren().add(r);
+                StackPane sp=new StackPane();
+                Label label= new Label(tmp.getRoot().getContent().getName());
+                sp.getChildren().addAll(r,label);
+                container.getChildren().add(sp);
+                
+                
             }
             else{
                 if(container instanceof HBox){
