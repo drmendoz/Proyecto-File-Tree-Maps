@@ -5,6 +5,7 @@
  */
 package main;
 
+import GUI.Interfaz;
 import GUI.TreeMapRectangle;
 import TreeMap.FileTreeMap;
 import javafx.application.Application;
@@ -26,11 +27,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FileTreeMap tree=new FileTreeMap();
-        tree.llenarArbol("C:\\Users\\bolic\\Desktop\\proyecto_josefo_terminado~");
-        
+        //tree.llenarArbol("C:\\Users\\bolic\\Desktop\\pruebaProyecto");
         TreeMapRectangle view= new TreeMapRectangle(tree);
-        view.drawRectangle(tree, view.getRoot());
-        primaryStage.setScene(new Scene(view.getRoot()));
+        //view.drawRectangle(tree,view.getRoot());
+        Interfaz interfaz= new Interfaz(view,tree);
+        interfaz.crearInterfaz();
+        primaryStage.setScene(new Scene(interfaz.getRoot()));
         primaryStage.show();
     }
     

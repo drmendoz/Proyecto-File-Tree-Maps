@@ -43,10 +43,13 @@ public class TreeMapRectangle {
     public void setRoot(HBox root) {
         this.root = root;
     }
-    
+    public void borrarMatriz(){
+        root.getChildren().clear();
+    }
     
     
     public void drawRectangle(FileTreeMap map,Pane container){
+        
         long tamMap=map.calcularPeso();
         double containerWidth= container.getPrefWidth();
         double containerHeigth=container.getPrefHeight();
